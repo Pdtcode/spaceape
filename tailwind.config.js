@@ -13,6 +13,7 @@ const config = {
         sans: ["var(--font-sans)"],
         mono: ["var(--font-mono)"],
         jua: ["var(--font-jua)"],
+        "martian-mono": ["var(--font-martian-mono)"],
       },
       colors: {
         sablue: "#04a6f8",

@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { use, useState } from "react";
 
 import { title } from "@/components/primitives";
 
@@ -102,25 +105,25 @@ const products = [
         image: "https://i.ibb.co/dsN90kxY/flavors.jpg",
       },
       {
-        id: 12,
+        id: 13,
         color: "KEY LIME MELON",
         price: 29.99,
         image: "https://i.ibb.co/dsN90kxY/flavors.jpg",
       },
       {
-        id: 13,
+        id: 14,
         color: "DRAGON FRUIT LYCHEE",
         price: 29.99,
         image: "https://i.ibb.co/dsN90kxY/flavors.jpg",
       },
       {
-        id: 14,
+        id: 15,
         color: "RASBERRY ZAZA",
         price: 29.99,
         image: "https://i.ibb.co/dsN90kxY/flavors.jpg",
       },
       {
-        id: 15,
+        id: 16,
         color: "TANG EXOTIC",
         price: 29.99,
         image: "https://i.ibb.co/dsN90kxY/flavors.jpg",
@@ -129,45 +132,99 @@ const products = [
   },
 ];
 
-export default function ProductsPage() {
+interface ProductDetailPageProps {
+  params: Promise<{
+    id: string;
+  }>;
+}
+
+export default function ProductDetailPage({ params }: ProductDetailPageProps) {
+  const { id } = use(params);
+  const product = products.find((p) => p.id === id);
+  const [selectedVariation, setSelectedVariation] = useState(0);
+
+  if (!product) {
+    return (
+      <div className="py-8 text-center">
+        <h1 className={title()}>Product Not Found</h1>
+        <Link
+          className="text-sablue hover:underline mt-4 inline-block"
+          href="/products"
+        >
+          Back to Products
+        </Link>
+      </div>
+    );
+  }
+
   return (
-    <div className="relative min-h-screen">
-      {/* Watermark Background */}
-      <div
-        className="fixed inset-0 opacity-10 pointer-events-none -z-10"
-        style={{
-          backgroundImage: "url(/floating.png)",
-          backgroundSize: "200px 200px",
-          backgroundRepeat: "repeat",
-          backgroundPosition: "center",
-        }}
-      />
+    <div className="py-8">
+      <Link
+        className="text-sablue hover:underline mb-6 inline-block"
+        href="/products"
+      >
+        ← Back to Products
+      </Link>
 
-      <div className="py-8">
-        <h1 className={title({ class: "mb-8" })}>Our Products</h1>
+      <div className="grid grid-cols-1 lg:grid-cols-2 mt-6 gap-12">
+        {/* Product Image */}
+        <div className="space-y-4">
+          <div className="aspect-square bg-gray-100 dark:bg-gray-800 rounded-xl overflow-hidden">
+            <Image
+              alt={`${product.name} - ${product.variations[selectedVariation].color}`}
+              className="w-full h-full object-cover"
+              height={600}
+              src={product.variations[selectedVariation].image}
+              width={600}
+            />
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-          {products.map((product) => (
-            <Link key={product.id} href={`/products/${product.id}`}>
-              <div className="group cursor-pointer">
-                <div className="relative aspect-square bg-gray-100 dark:bg-gray-800 rounded-xl overflow-hidden mb-4 hover:shadow-2xl transition-all duration-300 group-hover:scale-105">
-                  <Image
-                    alt={product.name}
-                    className="w-full h-full object-cover"
-                    height={500}
-                    src={product.variations[0].image}
-                    width={500}
-                  />
-                </div>
+          {/* Variation Thumbnails */}
+          <div className="grid grid-cols-5 gap-2">
+            {product.variations.map((variation, index) => (
+              <button
+                key={variation.id}
+                className={`aspect-square rounded-lg overflow-hidden border-2 transition-all ${
+                  selectedVariation === index
+                    ? "border-sablue"
+                    : "border-gray-300 hover:border-gray-400"
+                }`}
+                onClick={() => setSelectedVariation(index)}
+              >
+                <Image
+                  alt={`${product.name} - ${variation.color}`}
+                  className="w-full h-full object-cover"
+                  height={100}
+                  src={variation.image}
+                  width={100}
+                />
+              </button>
+            ))}
+          </div>
+        </div>
 
-                <div className="text-center space-y-2">
-                  <h2 className="text-2xl font-bold group-hover:text-sablue transition-colors">
-                    {product.name}
-                  </h2>
-                </div>
-              </div>
-            </Link>
-          ))}
+        {/* Product Details */}
+        <div className="space-y-6">
+          <div>
+            <h1 className={title({ class: "mb-2" })}>{product.name}</h1>
+            <p className="text-3xl mt-4 font-bold text-sablue">
+              ${product.basePrice}
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-semibold mb-2">Selected Color:</h3>
+            <p className="text-xl">
+              {product.variations[selectedVariation].color}
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-semibold mb-2">Description:</h3>
+            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+              {product.description}
+            </p>
+          </div>
         </div>
       </div>
     </div>

@@ -2,6 +2,7 @@ import {
   Fira_Code as FontMono,
   Inter as FontSans,
   Jua as FontJua,
+  Martian_Mono as FontMartianMono,
 } from "next/font/google";
 
 export const fontSans = FontSans({
@@ -18,4 +19,10 @@ export const fontJua = FontJua({
   subsets: ["latin"],
   variable: "--font-jua",
   weight: ["400"],
+});
+
+export const fontMartianMono = FontMartianMono({
+  subsets: ["latin"],
+  variable: "--font-martian-mono",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
 });
