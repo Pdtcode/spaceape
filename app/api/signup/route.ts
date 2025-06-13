@@ -6,6 +6,7 @@ interface SignupData {
   firstName: string;
   lastName: string;
   email: string;
+  phone: string;
   instagram: string;
   zipCode: string;
   state: string;
@@ -20,6 +21,7 @@ export async function POST(request: NextRequest) {
       !data.firstName ||
       !data.lastName ||
       !data.email ||
+      !data.phone ||
       !data.zipCode ||
       !data.state
     ) {
@@ -39,6 +41,32 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Validate phone number format
+    const phoneRegex =
+      /^[\+]?[1]?[-\s\.]?[\(]?[0-9]{3}[\)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$/;
+    const cleanPhone = data.phone.replace(/[\s\-\.\(\)]/g, "");
+
+    if (
+      !phoneRegex.test(data.phone) ||
+      cleanPhone.length < 10 ||
+      cleanPhone.length > 11
+    ) {
+      return NextResponse.json(
+        { error: "Invalid phone number format" },
+        { status: 400 },
+      );
+    }
+
+    // Validate ZIP code format
+    const zipRegex = /^[0-9]{5}(-[0-9]{4})?$/;
+
+    if (!zipRegex.test(data.zipCode)) {
+      return NextResponse.json(
+        { error: "Invalid ZIP code format" },
+        { status: 400 },
+      );
+    }
+
     // Prepare data for Google Sheets
     const timestamp = new Date().toLocaleString();
     const rowData = [
@@ -46,6 +74,7 @@ export async function POST(request: NextRequest) {
       data.firstName,
       data.lastName,
       data.email,
+      data.phone,
       data.instagram || "",
       data.zipCode,
       data.state,

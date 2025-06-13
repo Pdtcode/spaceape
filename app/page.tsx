@@ -118,7 +118,7 @@ export default function Home() {
             isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
-          <p className="text-sm mb-2">Scroll to explore</p>
+          <p className="text-sm mb-2">Scroll</p>
           <div className="flex flex-col items-center animate-bounce">
             <svg
               className="w-6 h-6 mb-1"

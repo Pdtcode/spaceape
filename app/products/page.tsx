@@ -99,31 +99,36 @@ const products = [
         id: 12,
         color: "RAZZMATAZZ",
         price: 29.99,
-        image: "https://i.ibb.co/dsN90kxY/flavors.jpg",
-      },
-      {
-        id: 12,
-        color: "KEY LIME MELON",
-        price: 29.99,
-        image: "https://i.ibb.co/dsN90kxY/flavors.jpg",
+        image:
+          "https://spaceapedisposable.com/wp-content/uploads/2025/04/photo_2025-04-08_13-51-08.jpg",
       },
       {
         id: 13,
-        color: "DRAGON FRUIT LYCHEE",
+        color: "KEY LIME MELON",
         price: 29.99,
-        image: "https://i.ibb.co/dsN90kxY/flavors.jpg",
+        image:
+          "https://spaceapedisposable.com/wp-content/uploads/2025/04/photo_2025-04-08_13-23-52.jpg",
       },
       {
         id: 14,
-        color: "RASBERRY ZAZA",
+        color: "DRAGON FRUIT LYCHEE",
         price: 29.99,
-        image: "https://i.ibb.co/dsN90kxY/flavors.jpg",
+        image:
+          "https://spaceapedisposable.com/wp-content/uploads/2025/04/photo_2025-04-08_12-58-47.jpg",
       },
       {
         id: 15,
+        color: "RASBERRY ZAZA",
+        price: 29.99,
+        image:
+          "https://spaceapedisposable.com/wp-content/uploads/2025/04/photo_2025-04-08_13-42-27.jpg",
+      },
+      {
+        id: 16,
         color: "TANG EXOTIC",
         price: 29.99,
-        image: "https://i.ibb.co/dsN90kxY/flavors.jpg",
+        image:
+          "https://spaceapedisposable.com/wp-content/uploads/2025/04/photo_2025-04-08_13-32-23.jpg",
       },
     ],
   },

@@ -102,31 +102,36 @@ const products = [
         id: 12,
         color: "RAZZMATAZZ",
         price: 29.99,
-        image: "https://i.ibb.co/dsN90kxY/flavors.jpg",
+        image:
+          "https://spaceapedisposable.com/wp-content/uploads/2025/04/photo_2025-04-08_13-51-08.jpg",
       },
       {
         id: 13,
         color: "KEY LIME MELON",
         price: 29.99,
-        image: "https://i.ibb.co/dsN90kxY/flavors.jpg",
+        image:
+          "https://spaceapedisposable.com/wp-content/uploads/2025/04/photo_2025-04-08_13-23-52.jpg",
       },
       {
         id: 14,
         color: "DRAGON FRUIT LYCHEE",
         price: 29.99,
-        image: "https://i.ibb.co/dsN90kxY/flavors.jpg",
+        image:
+          "https://spaceapedisposable.com/wp-content/uploads/2025/04/photo_2025-04-08_12-58-47.jpg",
       },
       {
         id: 15,
         color: "RASBERRY ZAZA",
         price: 29.99,
-        image: "https://i.ibb.co/dsN90kxY/flavors.jpg",
+        image:
+          "https://spaceapedisposable.com/wp-content/uploads/2025/04/photo_2025-04-08_13-42-27.jpg",
       },
       {
         id: 16,
         color: "TANG EXOTIC",
         price: 29.99,
-        image: "https://i.ibb.co/dsN90kxY/flavors.jpg",
+        image:
+          "https://spaceapedisposable.com/wp-content/uploads/2025/04/photo_2025-04-08_13-32-23.jpg",
       },
     ],
   },
@@ -209,13 +214,6 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
             <h1 className={title({ class: "mb-2" })}>{product.name}</h1>
             <p className="text-3xl mt-4 font-bold text-sablue">
               ${product.basePrice}
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-semibold mb-2">Selected Color:</h3>
-            <p className="text-xl">
-              {product.variations[selectedVariation].color}
             </p>
           </div>
 

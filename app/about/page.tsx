@@ -18,10 +18,10 @@ export default function AboutPage() {
         <h2
           className={`text-2xl ${fontJua.variable} font-jua text-sablue font-bold mb-4`}
         >
-          About us
+          About Us
         </h2>
         <p className="text-lg leading-relaxed">
-          Space-ape is a brand committed to delivering top-tier cannabis and
+          Space Ape is a brand committed to delivering top-tier cannabis and
           vaping products that push the boundaries of innovation and wellness.
         </p>
       </section>
@@ -32,7 +32,7 @@ export default function AboutPage() {
           Who We Are
         </h2>
         <p className="text-lg leading-relaxed">
-          At Space-ape, we&apos;re more than just a cannabis and vaping
+          At Space Ape, we&apos;re more than just a cannabis and vaping
           brand—we&apos;re pioneers of an elevated experience. Our mission is
           simple: to enhance your journey through premium products designed with
           innovation, purity, and intention. Whether you&apos;re new to the
@@ -53,7 +53,7 @@ export default function AboutPage() {
           Why Choose Us?
         </h2>
         <p className="text-lg leading-relaxed">
-          At Space-ape, we blend premium quality with innovative technology to
+          At Space Ape, we blend premium quality with innovative technology to
           bring you the best in vaping and cannabis products. Whether
           you&apos;re seeking luxury or affordability, we have something for
           everyone. Our eco-conscious approach and commitment to customer

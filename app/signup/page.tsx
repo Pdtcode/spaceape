@@ -64,6 +64,7 @@ interface FormData {
   firstName: string;
   lastName: string;
   email: string;
+  phone: string;
   instagram: string;
   zipCode: string;
   state: string;
@@ -74,21 +75,86 @@ export default function SignUpPage() {
     firstName: "",
     lastName: "",
     email: "",
+    phone: "",
     instagram: "",
     zipCode: "",
     state: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState("");
+  const [errors, setErrors] = useState<Partial<FormData>>({});
+
+  const validateField = (field: keyof FormData, value: string): string => {
+    switch (field) {
+      case "email":
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        return emailRegex.test(value)
+          ? ""
+          : "Please enter a valid email address";
+      case "phone":
+        const phoneRegex =
+          /^[\+]?[1]?[-\s\.]?[\(]?[0-9]{3}[\)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$/;
+        const cleanPhone = value.replace(/[\s\-\.\(\)]/g, "");
+
+        return phoneRegex.test(value) &&
+          cleanPhone.length >= 10 &&
+          cleanPhone.length <= 11
+          ? ""
+          : "Please enter a valid phone number (e.g., (555) 123-4567)";
+      case "zipCode":
+        const zipRegex = /^[0-9]{5}(-[0-9]{4})?$/;
+
+        return zipRegex.test(value)
+          ? ""
+          : "Please enter a valid ZIP code (e.g., 12345 or 12345-6789)";
+      default:
+        return "";
+    }
+  };
 
   const handleInputChange = (field: keyof FormData, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
+
+    // Clear error when user starts typing
+    if (errors[field]) {
+      setErrors((prev) => ({ ...prev, [field]: "" }));
+    }
+
+    // Validate on blur for email, phone, and zipCode
+    if (["email", "phone", "zipCode"].includes(field) && value.trim()) {
+      const error = validateField(field, value);
+
+      setErrors((prev) => ({ ...prev, [field]: error }));
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitMessage("");
+
+    // Validate all fields before submission
+    const newErrors: Partial<FormData> = {};
+
+    Object.keys(formData).forEach((key) => {
+      const field = key as keyof FormData;
+      const value = formData[field];
+
+      if (["email", "phone", "zipCode"].includes(field) && value) {
+        const error = validateField(field, value);
+
+        if (error) newErrors[field] = error;
+      }
+    });
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      setSubmitMessage("Please fix the errors above before submitting.");
+      setIsSubmitting(false);
+
+      return;
+    }
 
     try {
       const response = await fetch("/api/signup", {
@@ -105,6 +171,7 @@ export default function SignUpPage() {
           firstName: "",
           lastName: "",
           email: "",
+          phone: "",
           instagram: "",
           zipCode: "",
           state: "",
@@ -126,8 +193,11 @@ export default function SignUpPage() {
   return (
     <div className={`max-w-2xl mx-auto p-6 ${fontJua.variable} font-jua`}>
       <h1 className={`${title()} text-center mb-8 text-sablue`}>
-        Join Our Community
+        Join our Giveaway!
       </h1>
+      <p className="text-gray-500 mt-4 text-sm">
+        Just fill out the form below for a chance to win 10 cart for $0.01!
+      </p>
 
       <form className="space-y-6 mt-6" onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -158,18 +228,41 @@ export default function SignUpPage() {
           />
         </div>
 
-        <Input
-          required
-          classNames={{
-            input: "font-jua",
-            label: "font-jua font-bold",
-          }}
-          label="Email Address"
-          placeholder="Enter your email address"
-          type="email"
-          value={formData.email}
-          onChange={(e) => handleInputChange("email", e.target.value)}
-        />
+        <div>
+          <Input
+            required
+            classNames={{
+              input: "font-jua",
+              label: "font-jua font-bold",
+            }}
+            label="Email Address"
+            placeholder="Enter your email address"
+            type="email"
+            value={formData.email}
+            onChange={(e) => handleInputChange("email", e.target.value)}
+          />
+          {errors.email && (
+            <p className="text-red-500 text-sm mt-1 font-jua">{errors.email}</p>
+          )}
+        </div>
+
+        <div>
+          <Input
+            required
+            classNames={{
+              input: "font-jua",
+              label: "font-jua font-bold",
+            }}
+            label="Phone Number"
+            placeholder="(555) 123-4567"
+            type="tel"
+            value={formData.phone}
+            onChange={(e) => handleInputChange("phone", e.target.value)}
+          />
+          {errors.phone && (
+            <p className="text-red-500 text-sm mt-1 font-jua">{errors.phone}</p>
+          )}
+        </div>
 
         <Input
           classNames={{
@@ -183,18 +276,25 @@ export default function SignUpPage() {
           onChange={(e) => handleInputChange("instagram", e.target.value)}
         />
 
-        <Input
-          required
-          classNames={{
-            input: "font-jua",
-            label: "font-jua font-bold",
-          }}
-          label="Zip Code"
-          placeholder="Enter your zip code"
-          type="text"
-          value={formData.zipCode}
-          onChange={(e) => handleInputChange("zipCode", e.target.value)}
-        />
+        <div>
+          <Input
+            required
+            classNames={{
+              input: "font-jua",
+              label: "font-jua font-bold",
+            }}
+            label="Zip Code"
+            placeholder="12345 or 12345-6789"
+            type="text"
+            value={formData.zipCode}
+            onChange={(e) => handleInputChange("zipCode", e.target.value)}
+          />
+          {errors.zipCode && (
+            <p className="text-red-500 text-sm mt-1 font-jua">
+              {errors.zipCode}
+            </p>
+          )}
+        </div>
 
         <div className="space-y-2">
           <label className="font-jua font-bold text-sm" htmlFor="state-select">
@@ -221,7 +321,7 @@ export default function SignUpPage() {
           disabled={isSubmitting}
           type="submit"
         >
-          {isSubmitting ? "Submitting..." : "Join Our Community"}
+          {isSubmitting ? "Submitting..." : "Enter"}
         </Button>
 
         {submitMessage && (
