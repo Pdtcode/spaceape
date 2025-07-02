@@ -46,16 +46,17 @@ export const Navbar = () => {
         className="hidden sm:flex basis-1/5 sm:basis-full"
         justify="end"
       >
-        <ul className="hidden lg:flex gap-10 justify-start text-[2rem] mr-2">
+        <ul className="hidden lg:flex gap-10 justify-start mr-2">
           {siteConfig.navItems.map((item) => (
             <NavbarItem key={item.href}>
               <NextLink
                 className={clsx(
                   linkStyles({ color: "foreground" }),
-                  "data-[active=true]:text-white data-[active=true]:font-bold text-white text-[2rem]",
+                  "data-[active=true]:text-white data-[active=true]:font-bold text-white text-3xl font-passion-one",
                 )}
                 color="foreground"
                 href={item.href}
+                style={{ fontSize: '2rem', lineHeight: '2.25rem' }}
               >
                 {item.label}
               </NextLink>
@@ -73,9 +74,10 @@ export const Navbar = () => {
           {siteConfig.navMenuItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
               <Link
-                className="font-passion-one text-[2rem] my-2 font-bold text-sablue"
+                className="font-passion-one text-3xl my-2 font-bold text-sablue"
                 href={item.href}
                 size="lg"
+                style={{ fontSize: '2rem', lineHeight: '2.25rem' }}
                 onPress={() => setIsMenuOpen(false)}
               >
                 {item.label}

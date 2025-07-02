@@ -73,8 +73,8 @@ export function AgeVerification() {
               <div className="flex gap-4 justify-center">
                 <Button
                   className="px-8 text-gray-100"
-                  variant="bordered"
                   size="lg"
+                  variant="bordered"
                   onPress={() => handleVerification(true)}
                 >
                   I am over 21
