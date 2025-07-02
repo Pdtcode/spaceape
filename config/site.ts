@@ -6,29 +6,29 @@ export const siteConfig = {
     "Space-ape is a brand committed to delivering top-tier cannabis and vaping products that push the boundaries of innovation and wellness.",
   navItems: [
     {
-      label: "Products",
+      label: "PRODUCTS",
       href: "/products",
     },
     {
-      label: "About",
+      label: "ABOUT",
       href: "/about",
     },
     {
-      label: "Sign up",
+      label: "SIGN UP",
       href: "/signup",
     },
   ],
   navMenuItems: [
     {
-      label: "Products",
+      label: "PRODUCTS",
       href: "/products",
     },
     {
-      label: "About",
+      label: "ABOUT",
       href: "/about",
     },
     {
-      label: "Sign up",
+      label: "SIGN UP",
       href: "/signup",
     },
   ],

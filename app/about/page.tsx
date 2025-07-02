@@ -1,4 +1,4 @@
-import { fontJua } from "@/config/fonts";
+import { fontPassionOne } from "@/config/fonts";
 
 export default function AboutPage() {
   return (
@@ -16,9 +16,9 @@ export default function AboutPage() {
 
       <section>
         <h2
-          className={`text-2xl ${fontJua.variable} font-jua text-sablue font-bold mb-4`}
+          className={`text-5xl ${fontPassionOne.variable} font-passion-one text-sablue font-bold mb-4`}
         >
-          About Us
+          ABOUT US
         </h2>
         <p className="text-lg leading-relaxed">
           Space Ape is a brand committed to delivering top-tier cannabis and
@@ -27,9 +27,9 @@ export default function AboutPage() {
       </section>
       <section className="mt-8">
         <h2
-          className={`text-2xl ${fontJua.variable} font-jua text-sablue font-bold mb-4`}
+          className={`text-5xl ${fontPassionOne.variable} font-passion-one text-sablue font-bold mb-4`}
         >
-          Who We Are
+          WHO WE ARE
         </h2>
         <p className="text-lg leading-relaxed">
           At Space Ape, we&apos;re more than just a cannabis and vaping
@@ -48,9 +48,9 @@ export default function AboutPage() {
       </section>
       <section className="mt-8">
         <h2
-          className={`text-2xl ${fontJua.variable} font-jua text-sablue font-bold mb-4`}
+          className={`text-5xl ${fontPassionOne.variable} font-passion-one text-sablue font-bold mb-4`}
         >
-          Why Choose Us?
+          WHY CHOOSE US
         </h2>
         <p className="text-lg leading-relaxed">
           At Space Ape, we blend premium quality with innovative technology to

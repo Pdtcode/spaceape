@@ -3,6 +3,7 @@ import {
   Inter as FontSans,
   Jua as FontJua,
   Martian_Mono as FontMartianMono,
+  Passion_One as FontPassionOne,
 } from "next/font/google";
 
 export const fontSans = FontSans({
@@ -25,4 +26,10 @@ export const fontMartianMono = FontMartianMono({
   subsets: ["latin"],
   variable: "--font-martian-mono",
   weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+});
+
+export const fontPassionOne = FontPassionOne({
+  subsets: ["latin"],
+  variable: "--font-passion-one",
+  weight: ["400", "700", "900"],
 });

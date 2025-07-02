@@ -14,6 +14,7 @@ const config = {
         mono: ["var(--font-mono)"],
         jua: ["var(--font-jua)"],
         "martian-mono": ["var(--font-martian-mono)"],
+        "passion-one": ["var(--font-passion-one)"],
       },
       colors: {
         sablue: "#04a6f8",

@@ -10,128 +10,66 @@ const products = [
   {
     id: "2G",
     name: "2G Cart",
-    basePrice: 29.99,
     description:
-      "Digital screen that shows battery percentage and the setting that it is on 3 different temperature settings. The heat settings are 2.8, 3.2, 3.7. Preheat prevents the oil from clogging the cart",
+      "Full digital screen that shows battery percentage and the setting that it is on 3 different temperature settings. The heat settings are 2.8, 3.2, 3.7. Preheat prevents the oil from clogging the cart",
     variations: [
       {
         id: 1,
-        color: "Yellow",
-        price: 29.99,
-        image: "https://i.ibb.co/svYT6m4R/PHOTO-2025-04-23-07-59-13-1.jpg",
+        color: "Red",
+        image: "https://i.ibb.co/0jxtZ0zZ/PHOTO-2025-04-25-20-54-35.jpg",
       },
       {
         id: 2,
         color: "Blue",
-        price: 29.99,
-        image: "https://i.ibb.co/5WqXfC89/PHOTO-2025-04-23-07-59-13.jpg",
+        image: "https://i.ibb.co/vxkhCjzJ/PHOTO-2025-04-25-20-57-36-1.jpg",
       },
       {
         id: 3,
         color: "Purple",
-        price: 29.99,
-        image: "https://i.ibb.co/1JbPZFgH/PHOTO-2025-04-23-07-59-14-1.jpg",
+        image: "https://i.ibb.co/bgSdn312/PHOTO-2025-04-25-20-57-24.jpg",
       },
       {
         id: 4,
-        color: "Red",
-        price: 29.99,
-        image: "https://i.ibb.co/PzDH29Qp/PHOTO-2025-04-23-07-59-14.jpg",
+        color: "Yellow",
+        image: "https://i.ibb.co/XfbZvbv1/PHOTO-2025-04-25-20-57-43.jpg",
       },
       {
         id: 5,
         color: "Green",
-        price: 29.99,
-        image: "https://i.ibb.co/dJtRy9ZB/PHOTO-2025-04-23-18-54-13.jpg",
+        image: "https://i.ibb.co/KzcXbyRv/PHOTO-2025-04-25-21-04-25.jpg",
       },
     ],
   },
   {
     id: "4G",
     name: "4G Cart",
-    basePrice: 29.99,
     description:
-      "Digital screen that shows battery percentage and the setting that it is on 3 different temperature settings. The heat settings are 2.8, 3.2, 3.7. Preheat prevents the oil from clogging the cart",
+      "Digital screen that shows battery percentage and the setting that it is on 3 different temperature settings. The heat settings are 2.8, 3.2, 3.7. Preheat prevents the oil from clogging the cart. While product last. New LED version coming soon!",
     variations: [
       {
         id: 6,
         color: "Red",
-        price: 29.99,
-        image: "https://i.ibb.co/0jxtZ0zZ/PHOTO-2025-04-25-20-54-35.jpg",
+        image: "https://i.ibb.co/zhVGvJxY/blackcherrycandy.png",
       },
       {
         id: 7,
         color: "Blue",
-        price: 29.99,
-        image: "https://i.ibb.co/vxkhCjzJ/PHOTO-2025-04-25-20-57-36-1.jpg",
+        image: "https://i.ibb.co/FM64M73/bluezlushie.png",
       },
       {
         id: 8,
         color: "Purple",
-        price: 29.99,
-        image: "https://i.ibb.co/bgSdn312/PHOTO-2025-04-25-20-57-24.jpg",
+        image: "https://i.ibb.co/b54kkdJB/dragonfruitlychee.png",
       },
       {
         id: 9,
         color: "Yellow",
-        price: 29.99,
-        image: "https://i.ibb.co/XfbZvbv1/PHOTO-2025-04-25-20-57-43.jpg",
+        image: "https://i.ibb.co/rKCJP9ZK/grapegalaxy.png",
       },
       {
         id: 10,
         color: "Green",
-        price: 29.99,
-        image: "https://i.ibb.co/KzcXbyRv/PHOTO-2025-04-25-21-04-25.jpg",
-      },
-    ],
-  },
-  {
-    id: "resin",
-    name: "Resin",
-    basePrice: 29.99,
-    description:
-      "Ultra Premium Live Resin with a variety of flavors and strains",
-    variations: [
-      {
-        id: 11,
-        color: "Variety Pack",
-        price: 29.99,
-        image: "https://i.ibb.co/dsN90kxY/flavors.jpg",
-      },
-      {
-        id: 12,
-        color: "RAZZMATAZZ",
-        price: 29.99,
-        image:
-          "https://spaceapedisposable.com/wp-content/uploads/2025/04/photo_2025-04-08_13-51-08.jpg",
-      },
-      {
-        id: 13,
-        color: "KEY LIME MELON",
-        price: 29.99,
-        image:
-          "https://spaceapedisposable.com/wp-content/uploads/2025/04/photo_2025-04-08_13-23-52.jpg",
-      },
-      {
-        id: 14,
-        color: "DRAGON FRUIT LYCHEE",
-        price: 29.99,
-        image:
-          "https://spaceapedisposable.com/wp-content/uploads/2025/04/photo_2025-04-08_12-58-47.jpg",
-      },
-      {
-        id: 15,
-        color: "RASBERRY ZAZA",
-        price: 29.99,
-        image:
-          "https://spaceapedisposable.com/wp-content/uploads/2025/04/photo_2025-04-08_13-42-27.jpg",
-      },
-      {
-        id: 16,
-        color: "TANG EXOTIC",
-        price: 29.99,
-        image:
-          "https://spaceapedisposable.com/wp-content/uploads/2025/04/photo_2025-04-08_13-32-23.jpg",
+        image: "https://i.ibb.co/PscJ38qS/keylimemelon.png",
       },
     ],
   },
@@ -178,9 +116,9 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
             <Image
               alt={`${product.name} - ${product.variations[selectedVariation].color}`}
               className="w-full h-full object-cover"
-              height={600}
+              height={800}
               src={product.variations[selectedVariation].image}
-              width={600}
+              width={800}
             />
           </div>
 
@@ -212,9 +150,6 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
         <div className="space-y-6">
           <div>
             <h1 className={title({ class: "mb-2" })}>{product.name}</h1>
-            <p className="text-3xl mt-4 font-bold text-sablue">
-              ${product.basePrice}
-            </p>
           </div>
 
           <div>

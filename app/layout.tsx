@@ -5,7 +5,7 @@ import clsx from "clsx";
 import { Providers } from "./providers";
 
 import { siteConfig } from "@/config/site";
-import { fontSans, fontMartianMono } from "@/config/fonts";
+import { fontSans, fontMartianMono, fontPassionOne } from "@/config/fonts";
 import { Navbar } from "@/components/navbar";
 import { AgeVerification } from "@/components/age-verification";
 
@@ -40,6 +40,7 @@ export default function RootLayout({
           "min-h-screen text-foreground bg-transparent font-sans antialiased",
           fontSans.variable,
           fontMartianMono.variable,
+          fontPassionOne.variable,
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>

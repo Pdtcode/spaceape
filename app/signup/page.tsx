@@ -5,7 +5,7 @@ import { Button } from "@heroui/button";
 import { Input } from "@heroui/input";
 
 import { title } from "@/components/primitives";
-import { fontJua } from "@/config/fonts";
+import { fontPassionOne } from "@/config/fonts";
 
 const US_STATES = [
   "Alabama",
@@ -191,9 +191,11 @@ export default function SignUpPage() {
   };
 
   return (
-    <div className={`max-w-2xl mx-auto p-6 ${fontJua.variable} font-jua`}>
+    <div
+      className={`max-w-2xl mx-auto p-6 ${fontPassionOne.variable} font-passion-one`}
+    >
       <h1 className={`${title()} text-center mb-8 text-sablue`}>
-        Join our Giveaway!
+        JOIN OUR GIVEAWAY!
       </h1>
       <p className="text-gray-500 mt-4 text-sm">
         Just fill out the form below for a chance to win 10 cart for $0.01!

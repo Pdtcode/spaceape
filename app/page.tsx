@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-import { fontJua, fontMartianMono } from "@/config/fonts";
+import { fontPassionOne } from "@/config/fonts";
 
 export default function Home() {
   const NUM_ASTROS = 1; // Change this number to add more astronauts
@@ -104,11 +104,11 @@ export default function Home() {
       <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10 relative min-h-screen">
         <div className="inline-block max-w-xl text-white text-center justify-center z-20 relative">
           <div
-            className={`font-bold ${fontMartianMono.variable} text-4xl rounded-lg bg-black p-4 font-martian-mono transition-all duration-1000 ${
+            className={`font-bold ${fontPassionOne.variable} text-8xl rounded-lg bg-transparent p-4 font-passion-one transition-all duration-1000 ${
               isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            Reach for the Skies
+            REACH FOR THE SKIES
           </div>
         </div>
 
@@ -173,9 +173,9 @@ export default function Home() {
       <section className="py-16 z-30 px-8 bg-gradient-to-b from-black to-gray-900">
         <div className="max-w-4xl mx-auto text-center">
           <h2
-            className={`text-4xl font-bold text-white mb-8 ${fontJua.variable} font-jua`}
+            className={`text-4xl font-bold text-white mb-8 ${fontPassionOne.variable} font-passion-one`}
           >
-            What We Do
+            WHAT WE DO
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-gray-800 p-6 rounded-lg">
@@ -212,9 +212,9 @@ export default function Home() {
       <section className="py-16 px-8 bg-gradient-to-b from-sablue to-gray-900">
         <div className="max-w-4xl mx-auto text-center">
           <h2
-            className={`text-4xl font-bold text-white mb-6 ${fontJua.variable} font-jua`}
+            className={`text-4xl font-bold text-white mb-6 ${fontPassionOne.variable} font-passion-one`}
           >
-            Join Our Giveaway!
+            JOIN OUR GIVEAWAY!
           </h2>
           <p className="text-xl text-white mb-8 leading-relaxed">
             Enter our monthly giveaway for a chance to win premium cannabis
@@ -224,7 +224,7 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link
-              className="bg-sablue text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-blue-600 transition-colors inline-block"
+              className="bg-sablue font-passion-one text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-blue-600 transition-colors inline-block"
               href="/signup"
             >
               Enter
@@ -236,9 +236,9 @@ export default function Home() {
       <section className="py-16 px-8 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-6xl mx-auto">
           <h2
-            className={`text-4xl font-bold text-white text-center mb-12 ${fontJua.variable} font-jua`}
+            className={`text-4xl font-bold text-white text-center mb-12 ${fontPassionOne.variable} font-passion-one`}
           >
-            Explore Our Products
+            EXPLORE OUR PRODUCTS
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-10">
             <div className="bg-gray-800 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-transform duration-300">
@@ -246,9 +246,9 @@ export default function Home() {
                 <Image
                   alt="Premium Vape Product"
                   className="object-contain"
-                  height={150}
-                  src="https://i.ibb.co/p6h813Sd/product-imaeg-2-1-copy111-1.png"
-                  width={150}
+                  height={250}
+                  src="https://i.ibb.co/zhFtSJMX/blue-trans.png"
+                  width={250}
                 />
               </div>
               <div className="p-6">
@@ -256,11 +256,11 @@ export default function Home() {
                   Premium Vapes
                 </h3>
                 <p className="text-gray-300 mb-4">
-                  Vaping devices with advanced temperature control and sleek
-                  design.
+                  Patented vaping devices with advanced temperature control and
+                  sleek design. Elevate your experience today!
                 </p>
                 <Link
-                  className="bg-sablue text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors inline-block"
+                  className="bg-sablue font-passion-one text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors inline-block"
                   href="/products"
                 >
                   Explore
@@ -272,9 +272,10 @@ export default function Home() {
               <div
                 className="h-48 relative"
                 style={{
-                  backgroundImage: "url(https://i.ibb.co/4ZMCv53h/er-pa-2.png)",
+                  backgroundImage:
+                    "url(https://i.ibb.co/gLmc687X/product-6-300x300.webp)",
                   backgroundSize: "cover",
-                  backgroundPosition: "0% 40%",
+                  backgroundPosition: "0% 70%",
                   backgroundRepeat: "no-repeat",
                 }}
               />
@@ -287,7 +288,7 @@ export default function Home() {
                   energizing sativas.
                 </p>
                 <Link
-                  className="bg-sablue text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors inline-block"
+                  className="bg-sablue font-passion-one text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors inline-block"
                   href="/products"
                 >
                   Explore
