@@ -56,31 +56,31 @@ export function AgeVerification() {
           >
             <motion.div
               animate={{ scale: 1, opacity: 1 }}
-              className="bg-white rounded-lg p-8 max-w-md mx-4 text-center shadow-2xl border border-gray-200"
+              className="bg-sablue rounded-lg p-8 max-w-md mx-4 font-passion-one text-center shadow-2xl border border-gray-200"
               exit={{ scale: 0.9, opacity: 0 }}
               initial={{ scale: 0.9, opacity: 0 }}
             >
-              <h2 className="text-2xl font-bold mb-4 text-gray-900">
+              <h2 className="text-2xl font-bold mb-4 text-gray-100">
                 Age Verification Required
               </h2>
-              <p className="text-gray-700 mb-6 leading-relaxed">
+              <p className="text-gray-100 mb-6 leading-relaxed">
                 You must be 21 years of age or older to view this site.*
               </p>
-              <p className="text-sm text-gray-600 mb-8">
+              <p className="text-sm text-gray-100 mb-8">
                 *Or 18 or older in the following states: Arizona, New Jersey,
                 New York.
               </p>
               <div className="flex gap-4 justify-center">
                 <Button
-                  className="px-8"
-                  color="primary"
+                  className="px-8 text-gray-100"
+                  variant="bordered"
                   size="lg"
                   onPress={() => handleVerification(true)}
                 >
                   I am over 21
                 </Button>
                 <Button
-                  className="px-8"
+                  className="px-8 text-gray-100"
                   size="lg"
                   variant="bordered"
                   onPress={() => handleVerification(false)}
