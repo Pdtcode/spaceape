@@ -23,6 +23,7 @@ export default function Home() {
   });
 
   const [isLoaded, setIsLoaded] = useState(false);
+  const [mobileBottomClass, setMobileBottomClass] = useState('bottom-32');
 
   useEffect(() => {
     // Trigger fade-in animation after component mounts
@@ -41,6 +42,21 @@ export default function Home() {
       width: window.innerWidth * (isMobile ? 0.62 : 0.78),
       height: window.innerHeight * 0.9,
     });
+
+    // Detect browser type for mobile positioning
+    if (isMobile) {
+      const userAgent = navigator.userAgent.toLowerCase();
+      const isSafari = /safari/.test(userAgent) && !/chrome/.test(userAgent);
+      const isChrome = /chrome/.test(userAgent) && !/edg/.test(userAgent);
+      
+      if (isSafari) {
+        setMobileBottomClass('bottom-28'); // Higher for Safari mobile UI
+      } else if (isChrome) {
+        setMobileBottomClass('bottom-40'); // Medium for Chrome mobile UI
+      } else {
+        setMobileBottomClass('bottom-32'); // Default for other browsers
+      }
+    }
   }, []);
 
   useEffect(() => {
@@ -114,7 +130,7 @@ export default function Home() {
 
         {/* Scroll Down Prompt */}
         <div
-          className={`absolute bottom-32 md:bottom-8 left-1/2 transform -translate-x-1/2 text-white text-center z-20 transition-all duration-1000 delay-1000 ${
+          className={`absolute ${mobileBottomClass} md:bottom-8 left-1/2 transform -translate-x-1/2 text-white text-center z-20 transition-all duration-1000 delay-1000 ${
             isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
