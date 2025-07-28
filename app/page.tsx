@@ -52,7 +52,7 @@ export default function Home() {
       if (isSafari) {
         setMobileBottomClass('bottom-28'); // Higher for Safari mobile UI
       } else if (isChrome) {
-        setMobileBottomClass('bottom-40'); // Medium for Chrome mobile UI
+        setMobileBottomClass('bottom-36'); // Medium for Chrome mobile UI
       } else {
         setMobileBottomClass('bottom-32'); // Default for other browsers
       }
