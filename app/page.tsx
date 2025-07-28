@@ -114,7 +114,7 @@ export default function Home() {
 
         {/* Scroll Down Prompt */}
         <div
-          className={`absolute bottom-16 md:bottom-8 left-1/2 transform -translate-x-1/2 text-white text-center z-20 transition-all duration-1000 delay-1000 ${
+          className={`absolute bottom-32 md:bottom-8 left-1/2 transform -translate-x-1/2 text-white text-center z-20 transition-all duration-1000 delay-1000 ${
             isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
