@@ -50,11 +50,11 @@ export default function Home() {
       const isChrome = /chrome/.test(userAgent) && !/edg/.test(userAgent);
       
       if (isSafari) {
-        setMobileBottomClass('bottom-28'); // Higher for Safari mobile UI
+        setMobileBottomClass("bottom-28"); // Higher for Safari mobile UI
       } else if (isChrome) {
-        setMobileBottomClass('bottom-60'); // Medium for Chrome mobile UI
+        setMobileBottomClass("bottom-80"); // Much higher for Chrome mobile UI
       } else {
-        setMobileBottomClass('bottom-32'); // Default for other browsers
+        setMobileBottomClass("bottom-32"); // Default for other browsers
       }
     }
   }, []);
