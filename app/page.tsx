@@ -23,7 +23,7 @@ export default function Home() {
   });
 
   const [isLoaded, setIsLoaded] = useState(false);
-  const [mobileBottomClass, setMobileBottomClass] = useState('bottom-32');
+  const [mobileBottomClass, setMobileBottomClass] = useState("bottom-32");
 
   useEffect(() => {
     // Trigger fade-in animation after component mounts
@@ -46,13 +46,12 @@ export default function Home() {
     // Detect browser type for mobile positioning
     if (isMobile) {
       const userAgent = navigator.userAgent.toLowerCase();
-      const isSafari = /safari/.test(userAgent) && !/chrome/.test(userAgent);
-      const isChrome = /chrome/.test(userAgent) && !/edg/.test(userAgent);
       
-      if (isSafari) {
-        setMobileBottomClass("bottom-28"); // Higher for Safari mobile UI
-      } else if (isChrome) {
+      // Check Chrome first since Chrome on iOS also has "safari" in user agent
+      if (/chrome/.test(userAgent) && !/edg/.test(userAgent)) {
         setMobileBottomClass("bottom-80"); // Much higher for Chrome mobile UI
+      } else if (/safari/.test(userAgent)) {
+        setMobileBottomClass("bottom-28"); // Higher for Safari mobile UI  
       } else {
         setMobileBottomClass("bottom-32"); // Default for other browsers
       }
