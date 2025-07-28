@@ -102,9 +102,9 @@ export default function Home() {
   return (
     <>
       <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10 relative min-h-screen">
-        <div className="inline-block max-w-xl text-white text-center justify-center z-20 relative">
+        <div className="inline-block max-w-xl text-white text-center justify-center z-20 relative mt-[-20vh] md:mt-0">
           <div
-            className={`font-bold ${fontPassionOne.variable} text-8xl rounded-lg bg-transparent p-4 font-passion-one transition-all duration-1000 ${
+            className={`font-bold ${fontPassionOne.variable} text-5xl md:text-8xl rounded-lg bg-transparent p-4 font-passion-one transition-all duration-1000 ${
               isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
@@ -114,7 +114,7 @@ export default function Home() {
 
         {/* Scroll Down Prompt */}
         <div
-          className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white text-center z-20 transition-all duration-1000 delay-1000 ${
+          className={`absolute bottom-16 md:bottom-8 left-1/2 transform -translate-x-1/2 text-white text-center z-20 transition-all duration-1000 delay-1000 ${
             isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
